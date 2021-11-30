@@ -95,6 +95,21 @@ box-sizing: border-box;
         background: var(--light-color);
         transition: 400ms;
     }
+    .nav-toggle-checkbox:checked ~ .nav-toggle-spans .nav-span-one {
+        position: relative;
+        top: 30%; /* Changed from 100% */
+        transform: rotate(45deg);
+        transition: 400ms;
+    }
+    .nav-toggle-checkbox:checked ~ .nav-toggle-spans .nav-span-two {
+        opacity: 0;
+    }
+    .nav-toggle-checkbox:checked ~ .nav-toggle-spans .nav-span-three {
+        position: relative;
+        top: -30%;
+        transform: rotate(-45deg);
+        transition: 400ms;
+    }
     .navbar, .nav-toggle-checkbox:not(:checked) ~ .navbar {
         position:fixed;
         top: 0;
