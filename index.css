@@ -1,0 +1,122 @@
+:root {
+--main-color:#ff9955ff;
+--secondary-color:yellow;
+--dark-color:#444;
+--light-color:#fafafa;
+}
+body {
+font-family: 'Montserrat', sans-serif;
+background: var(--light-color);
+color: var(--dark-color);
+text-align: justify;
+margin: 0px;
+display: grid;
+place-items: center;
+padding: 10px;
+font-size: 18px;
+}
+
+::selection {
+    background: var(--main-color);
+    color: var(--light-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+input {
+box-sizing: border-box;
+}
+
+.flex-horizontal {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.max-width {
+    width: clamp(200px, 90%, 1000px);
+}
+
+/* header */
+.header {
+    height: 100px;
+    justify-content: space-between;
+}
+.title {
+    height: 100%;
+}
+.title img {
+    height: 100%;
+    width: clamp(0px,100%,250px);
+}
+.nav-toggle-checkbox, .nav-toggle-spans {
+    position: fixed;
+    top: 10px;
+    right: -100vw;
+    height: 80px;
+    width: 80px;
+}
+.nav-toggle-checkbox {
+    opacity: 0;
+}
+.nav-toggle-spans span {
+    height: 20%;
+    background: var(--main-color);
+    margin: 10% 0;
+    display:flex;
+    flex-direction: row;
+    z-index: 2;
+    transition: 400ms;
+}
+.navbar {
+    display: flex;
+    gap: 2.5px;
+    transition: 300ms;
+}
+.navbar a {
+    margin: 5px;
+}
+
+
+@media screen and (max-width:700px) {
+    .nav-toggle-checkbox, .nav-toggle-spans {
+        right: 5%;
+        transition: 400ms;
+    }
+    .nav-toggle-spans {
+        z-index: 2;
+    }
+    .nav-toggle-checkbox {
+        z-index: 3;
+    }
+    .nav-toggle-checkbox:checked ~ .nav-toggle-spans span {
+        background: var(--light-color);
+        transition: 400ms;
+    }
+    .navbar, .nav-toggle-checkbox:not(:checked) ~ .navbar {
+        position:fixed;
+        top: 0;
+        right: -100vh;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        background: var(--main-color);
+        opacity: 90%;
+        border-left: 4px solid var(--secondary-color);
+        padding: 150px 5% 0 50px;
+        z-index: 1;
+        transition: 400ms;
+    }
+    .nav-toggle-checkbox:checked ~ .navbar {
+        right: 0;
+        transition: 400ms;
+    }
+    .nav-toggle-checkbox:checked ~ .navbar a {
+        color: var(--light-color);
+        text-align: right;
+        font-size: 1.25em;
+    }
+}
