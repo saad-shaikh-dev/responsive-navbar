@@ -5,7 +5,7 @@
 --light-color:#fafafa;
 }
 body {
-font-family: 'Montserrat', sans-serif;
+font-family: Montserrat, sans-serif;
 background: var(--light-color);
 color: var(--dark-color);
 text-align: justify;
@@ -49,14 +49,14 @@ box-sizing: border-box;
 }
 .title img {
     height: 100%;
-    width: clamp(0px,100%,250px);
+    width: clamp(0px,250px,60%);
 }
 .nav-toggle-checkbox, .nav-toggle-spans {
     position: fixed;
-    top: 10px;
+    top: 2.5%;
     right: -100vw;
-    height: 80px;
-    width: 80px;
+    height: clamp(10px,80px,20vw);
+    width: clamp(10px,80px,20vw);
 }
 .nav-toggle-checkbox {
     opacity: 0;
